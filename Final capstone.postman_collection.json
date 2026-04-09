@@ -1,0 +1,456 @@
+{
+  "info": {
+    "_postman_id": "4e62e034-5226-49a5-97a4-5e5882a44da1",
+    "name": "Final capstone",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32685087"
+  },
+  "item": [
+    {
+      "name": "Customer-service",
+      "item": [
+        {
+          "name": "Customer Service - Get All Customers",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9091/api/customer/getCustomerById/1",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9091",
+              "path": [
+                "api",
+                "customer",
+                "getCustomerById",
+                "1"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Customer service- Add customer",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiI4bnVNRDRjTWRGclpFb3dpNlYyOHprZlRJbEtSN1Q4WE96X3BRa1FadWRVIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlBHRVpnNlBkRFlwd2RBZFVSWl9lQmNVRElia05WSnRmSl9aUUtWd28zM1EiLCJpc3MiOiJodHRwczovL2ludGVncmF0b3ItNDI5MjcxMi5va3RhLmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE3NzUyMDEzODQsImV4cCI6MTc3NTIwNDk4NCwiY2lkIjoiMG9hMTBwbTlsNHF4M0dibHU2OTgiLCJzY3AiOlsidXNlciJdLCJzdWIiOiIwb2ExMHBtOWw0cXgzR2JsdTY5OCJ9.As9t0vtGkqSu5YP-lYO3jTUJMpI7s6Af0uRvExdK_JMy5vbqzrTSYgN2UiQddDgGWd-M3aaWWngZHe9Mz_uo34pXoPSFqGBVxSTNm3z1eVkTjl2tpPj0LglPZ7wLPMFKwdPRjXGrwGR3WSjph0wDHmNv82u93I90YgX3jxADBZod3rqz4VDj__RUQYKJygCe4TEqRTiqrCd-8iRPCtXIWDjdAcuJetg1fb4HgR1zP0a3dPpV33Br6yvZTjSyJGRouDCnaP72aLxKioSZj8XI3zTmV718d_-W6hZaAa6AwcM3zbdl978XYFpcm1HCItjJwy7mbYhR9m8dmpOCtKSDyQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "       {\r\n        \"name\": \"Shantanu\",\r\n        \"email\": \"Shantanu@gmail.com\",\r\n        \"zipcode\": 100009\r\n       }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9091/api/customer/add-customer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9091",
+              "path": [
+                "api",
+                "customer",
+                "add-customer"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "product-service",
+      "item": [
+        {
+          "name": "Product Service - Get all products",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiI4bnVNRDRjTWRGclpFb3dpNlYyOHprZlRJbEtSN1Q4WE96X3BRa1FadWRVIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULkNHNmxUdGl6d0MzcUlGX0VibWF5TERUekZ1UGZVZ0xtT09QQTMxNVBiV2siLCJpc3MiOiJodHRwczovL2ludGVncmF0b3ItNDI5MjcxMi5va3RhLmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE3NzQ5Mzk5MTYsImV4cCI6MTc3NDk0MzUxNiwiY2lkIjoiMG9hMTBwbTlsNHF4M0dibHU2OTgiLCJzY3AiOlsidXNlciJdLCJzdWIiOiIwb2ExMHBtOWw0cXgzR2JsdTY5OCJ9.BAwvGKgjIYJpp8SwzJh5TAGh55Mq0bm9fH3dD45811efU4LGJcuB7T4oerO3Dab1qS1MBIPwnbWbrnTLkYphlObeNeEukSWpwtf5VXL04fJUDuEVY71qWIIqhWfwNQp1kJR3_6223kaYLA5O7nFBlquPhN-u9B9zxfblbAc56kGiWrjEZJ1VBx0PX8K34q8oxv54HUeyasST9_RKBU9mXwYKuSuEHU5z9byDTMqlJC2iP4VFKP5Zb-OQPpCNyK0U8dEj0u01_lUcwxIJCgkd2XJzsGxViw61dcS0VGcEhNh1TAaN5WH-BGiqimJMUswRSODnRFRZbd7nlL0sezvNpQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9093/api/product/getAllProducts",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9093",
+              "path": [
+                "api",
+                "product",
+                "getAllProducts"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Product Service- Get all Products By id",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiI4bnVNRDRjTWRGclpFb3dpNlYyOHprZlRJbEtSN1Q4WE96X3BRa1FadWRVIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULkNHNmxUdGl6d0MzcUlGX0VibWF5TERUekZ1UGZVZ0xtT09QQTMxNVBiV2siLCJpc3MiOiJodHRwczovL2ludGVncmF0b3ItNDI5MjcxMi5va3RhLmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE3NzQ5Mzk5MTYsImV4cCI6MTc3NDk0MzUxNiwiY2lkIjoiMG9hMTBwbTlsNHF4M0dibHU2OTgiLCJzY3AiOlsidXNlciJdLCJzdWIiOiIwb2ExMHBtOWw0cXgzR2JsdTY5OCJ9.BAwvGKgjIYJpp8SwzJh5TAGh55Mq0bm9fH3dD45811efU4LGJcuB7T4oerO3Dab1qS1MBIPwnbWbrnTLkYphlObeNeEukSWpwtf5VXL04fJUDuEVY71qWIIqhWfwNQp1kJR3_6223kaYLA5O7nFBlquPhN-u9B9zxfblbAc56kGiWrjEZJ1VBx0PX8K34q8oxv54HUeyasST9_RKBU9mXwYKuSuEHU5z9byDTMqlJC2iP4VFKP5Zb-OQPpCNyK0U8dEj0u01_lUcwxIJCgkd2XJzsGxViw61dcS0VGcEhNh1TAaN5WH-BGiqimJMUswRSODnRFRZbd7nlL0sezvNpQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9093/api/product/getAllProductsById?productIds=1,2,3",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9093",
+              "path": [
+                "api",
+                "product",
+                "getAllProductsById"
+              ],
+              "query": [
+                {
+                  "key": "productIds",
+                  "value": "1,2,3"
+                }
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Product service- create product",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiI4bnVNRDRjTWRGclpFb3dpNlYyOHprZlRJbEtSN1Q4WE96X3BRa1FadWRVIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULnp2UFlIeVdtSXJOeXFLakJOZ3NWVXZYcDkxVWwyS3NfRFJBY3hScGs1X1EiLCJpc3MiOiJodHRwczovL2ludGVncmF0b3ItNDI5MjcxMi5va3RhLmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE3NzUyMDQxMjYsImV4cCI6MTc3NTIwNzcyNiwiY2lkIjoiMG9hMTBwbTlsNHF4M0dibHU2OTgiLCJzY3AiOlsiYWRtaW4iXSwic3ViIjoiMG9hMTBwbTlsNHF4M0dibHU2OTgifQ.lBlenPxBzDOV-BEVGwf8T8ZC5PfEMH7txB399WtDLeI2QddrJbSEpbQU6wLYhWJZ9uznGvxecsesDPWD8HUd4sXsT-M-L1sgAs0j_VZsnuZ1ywt9D0_LOkqMO_QmjbMfge8ret3JwgtrccnODTupx-WmLi4wIAlThBVQ15scEZ3z8H-bgGcosHl4kkXasuNnZUgv098iz8h1XT3UJZ4Jg-GCrJc8TFoo3WGEortziq44msB9RwdYUf9TjvldYHESKyDBcHgcX0wMAt7x2C9hXbF6_FvPDaPoAiDKJXfk0hK2hempDoxhVypkvpR75Q5X3T7BYaTTOl5NZuQRJ78k5A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"description\":\"A versatile, 4-stringed instrument originating from Hawaii\",\r\n\"name\":\"Ukulele\",\r\n\"price\": 19.99,\r\n\"quantityAvailable\": 150\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9093/api/product/add-product",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9093",
+              "path": [
+                "api",
+                "product",
+                "add-product"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "order-service",
+      "item": [
+        {
+          "name": "Order Service -Get orders",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiI4bnVNRDRjTWRGclpFb3dpNlYyOHprZlRJbEtSN1Q4WE96X3BRa1FadWRVIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULkFraVhZN01Jb2liWXdWMkVmWTFoY3ZDT1BTOTNjVnhSMUhJNktYMkFQOUUiLCJpc3MiOiJodHRwczovL2ludGVncmF0b3ItNDI5MjcxMi5va3RhLmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE3NzQ5Mzg4ODgsImV4cCI6MTc3NDk0MjQ4OCwiY2lkIjoiMG9hMTBwbTlsNHF4M0dibHU2OTgiLCJzY3AiOlsidXNlciJdLCJzdWIiOiIwb2ExMHBtOWw0cXgzR2JsdTY5OCJ9.aSbkMC2RA5Uwx2F2JZtHSvGB5jFo4Ia8fMX8GN86_v7sRXoFSwLZpFqr2rOPq2ikLM2DrfF3UtxiPMFgzZju-fArPwCEHTNDyjRbS_CIeNs4TqMobU0p68Xx81Cmw5Fr_xIeRUNx-F0y4RJgya1v7b9nel47jO7GwBzSMQvB3qnjPAOj5h6xz5gAEkG5qM4ZS5o0RIKUElN_S9qWmYz-aziOCX6Dys6DhKaFgNLF6F19lJKXmf4JluaYGzwM7fhjjEuaCvI-dzncetyywA5ZKhgoAUiOKcFf9C-EYS3sXtG8moNmk9trRbOXG97ve8iXOCP_LEdW2lRAoxFKf0OQ5A",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9094/api/orders",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9094",
+              "path": [
+                "api",
+                "orders"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Order Service - Post order",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiI4bnVNRDRjTWRGclpFb3dpNlYyOHprZlRJbEtSN1Q4WE96X3BRa1FadWRVIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlBHRVpnNlBkRFlwd2RBZFVSWl9lQmNVRElia05WSnRmSl9aUUtWd28zM1EiLCJpc3MiOiJodHRwczovL2ludGVncmF0b3ItNDI5MjcxMi5va3RhLmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE3NzUyMDEzODQsImV4cCI6MTc3NTIwNDk4NCwiY2lkIjoiMG9hMTBwbTlsNHF4M0dibHU2OTgiLCJzY3AiOlsidXNlciJdLCJzdWIiOiIwb2ExMHBtOWw0cXgzR2JsdTY5OCJ9.As9t0vtGkqSu5YP-lYO3jTUJMpI7s6Af0uRvExdK_JMy5vbqzrTSYgN2UiQddDgGWd-M3aaWWngZHe9Mz_uo34pXoPSFqGBVxSTNm3z1eVkTjl2tpPj0LglPZ7wLPMFKwdPRjXGrwGR3WSjph0wDHmNv82u93I90YgX3jxADBZod3rqz4VDj__RUQYKJygCe4TEqRTiqrCd-8iRPCtXIWDjdAcuJetg1fb4HgR1zP0a3dPpV33Br6yvZTjSyJGRouDCnaP72aLxKioSZj8XI3zTmV718d_-W6hZaAa6AwcM3zbdl978XYFpcm1HCItjJwy7mbYhR9m8dmpOCtKSDyQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "   {\r\n        \"date\": \"2026-03-25T14:48:37.810Z\",\r\n\r\n        \"customerId\": 4,\r\n        \"productIds\": [\r\n            2,\r\n            4,\r\n            5\r\n        ],\r\n        \"totalValue\": 0.0\r\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:9094/api/orders/createOrder",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9094",
+              "path": [
+                "api",
+                "orders",
+                "createOrder"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:9094/api/orders/login?scope=admin",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "9094",
+              "path": [
+                "api",
+                "orders",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "scope",
+                  "value": "admin"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "API Gateway",
+      "item": [
+        {
+          "name": "Gateway API service- Add customer",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiI4bnVNRDRjTWRGclpFb3dpNlYyOHprZlRJbEtSN1Q4WE96X3BRa1FadWRVIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULlBHRVpnNlBkRFlwd2RBZFVSWl9lQmNVRElia05WSnRmSl9aUUtWd28zM1EiLCJpc3MiOiJodHRwczovL2ludGVncmF0b3ItNDI5MjcxMi5va3RhLmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE3NzUyMDEzODQsImV4cCI6MTc3NTIwNDk4NCwiY2lkIjoiMG9hMTBwbTlsNHF4M0dibHU2OTgiLCJzY3AiOlsidXNlciJdLCJzdWIiOiIwb2ExMHBtOWw0cXgzR2JsdTY5OCJ9.As9t0vtGkqSu5YP-lYO3jTUJMpI7s6Af0uRvExdK_JMy5vbqzrTSYgN2UiQddDgGWd-M3aaWWngZHe9Mz_uo34pXoPSFqGBVxSTNm3z1eVkTjl2tpPj0LglPZ7wLPMFKwdPRjXGrwGR3WSjph0wDHmNv82u93I90YgX3jxADBZod3rqz4VDj__RUQYKJygCe4TEqRTiqrCd-8iRPCtXIWDjdAcuJetg1fb4HgR1zP0a3dPpV33Br6yvZTjSyJGRouDCnaP72aLxKioSZj8XI3zTmV718d_-W6hZaAa6AwcM3zbdl978XYFpcm1HCItjJwy7mbYhR9m8dmpOCtKSDyQ",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "       {\r\n        \"name\": \"Shantanu\",\r\n        \"email\": \"Shantanu@gmail.com\",\r\n        \"zipcode\": 100009\r\n       }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/customer/add-customer",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "customer",
+                "add-customer"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Gateway API service- create product",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiI4bnVNRDRjTWRGclpFb3dpNlYyOHprZlRJbEtSN1Q4WE96X3BRa1FadWRVIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULldZeVN0YW1tU2dWbmdhT0JvblRxV25kYTRzTWFPR3dPN05xem1vRXJmcjQiLCJpc3MiOiJodHRwczovL2ludGVncmF0b3ItNDI5MjcxMi5va3RhLmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE3NzUyMDgyOTksImV4cCI6MTc3NTIxMTg5OSwiY2lkIjoiMG9hMTBwbTlsNHF4M0dibHU2OTgiLCJzY3AiOlsiYWRtaW4iXSwic3ViIjoiMG9hMTBwbTlsNHF4M0dibHU2OTgifQ.Wo6fr-e7bnml-U3KnJ44cq4MtzVVW0VLrYqc82FDKigS0mLENmXpo8l-_nrnUDp9gvhZd_SBRcuYnJgMDTU25wVFP-Ghw8hhaCRuzA0SKAVuEZDTzaUpef2CL-SxekBixHd9-kNJmpmAtt7UatjjoTkuUSPWafqZxFXKAGL2PLHzSG2DBaKSEIJDQj_mDVJUfgBtPmrkQcfR2FUnuEabdWDz4ANj77AHX5LIPXd8s8C17Fyw-K3NagT4tL6AePSiLbMiLp43lnuEQ1vhYtKjgvykmia3xI4xmTwCnCcn9ZzuJhOJAUDVTkQBuMADo88qRsrIUcHsq9xeAOoQpAO_Wg",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n\"description\":\"A versatile, 4-stringed instrument originating from Hawaii\",\r\n\"name\":\"Ukulele\",\r\n\"price\": 19.99,\r\n\"quantityAvailable\": 150\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/product/add-product",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "product",
+                "add-product"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Gateway API service- Post order",
+          "request": {
+            "auth": {
+              "type": "bearer",
+              "bearer": [
+                {
+                  "key": "token",
+                  "value": "eyJraWQiOiI4bnVNRDRjTWRGclpFb3dpNlYyOHprZlRJbEtSN1Q4WE96X3BRa1FadWRVIiwiYWxnIjoiUlMyNTYifQ.eyJ2ZXIiOjEsImp0aSI6IkFULmdsQ3pNSlJkQy1uMEpSMG94UTQyY0NtTkZtYmJCZkNITGZ2TElOMDZEMGsiLCJpc3MiOiJodHRwczovL2ludGVncmF0b3ItNDI5MjcxMi5va3RhLmNvbS9vYXV0aDIvZGVmYXVsdCIsImF1ZCI6ImFwaTovL2RlZmF1bHQiLCJpYXQiOjE3NzUyMDgzODUsImV4cCI6MTc3NTIxMTk4NSwiY2lkIjoiMG9hMTBwbTlsNHF4M0dibHU2OTgiLCJzY3AiOlsidXNlciJdLCJzdWIiOiIwb2ExMHBtOWw0cXgzR2JsdTY5OCJ9.MMfW4nxaEmnPJFt8dkP753Nvc2WExriYYjDX9kQFdqX8r2ctz-x1NNkyrAbOi30B_6ldM5iW9YTw_1MI2tQCrH9LMJgTuzXBUkwRh3TXdv5uuZGN5w5lCsdDdAiBg6mCwD3h43LtfXXJRiEopyBjxRRvJcBtQt_KGkFxbzU6Y3Eg48Sm6Kidohq3TvBo1QrSIcqm8MhD_RB7LORo5PXytBU5jkIA-4kD9ob57CaXJG3O-SVTMiS8an0ONnHv_7gOa8sQ7vvYrnDfxGKIOvPedV8CWELKyrAqWu_bcSWNNCcvOYP4zq28GDaVcOtvBv7iH-TUsnoip5HqKEHYKkHH8g",
+                  "type": "string"
+                }
+              ]
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "   {\r\n        \"date\": \"2026-03-25T14:48:37.810Z\",\r\n\r\n        \"customerId\": 4,\r\n        \"productIds\": [\r\n            2,\r\n            4,\r\n            5\r\n        ],\r\n        \"totalValue\": 0.0\r\n    }",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/orders/createOrder",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "orders",
+                "createOrder"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Gateway API service - Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "http://localhost:8080/api/orders/login?scope=user",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "8080",
+              "path": [
+                "api",
+                "orders",
+                "login"
+              ],
+              "query": [
+                {
+                  "key": "scope",
+                  "value": "user"
+                }
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

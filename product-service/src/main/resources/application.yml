@@ -1,0 +1,12 @@
+server:
+  port: 9093
+spring:
+  profiles:
+    active: local
+  application:
+    name: product-service
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: https://integrator-4292712.okta.com/oauth2/default
